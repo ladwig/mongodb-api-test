@@ -1,5 +1,5 @@
 {
-    "name": "mongodb-api-test",
+    "name": "db-api-test",
     "version": 2,
     "env": {
       "MONGODB_URI": "@db-api-test"
