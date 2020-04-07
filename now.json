@@ -2,6 +2,6 @@
     "name": "db-api-test",
     "version": 2,
     "env": {
-      "MONGODB_URI": "@db-api-test"
+      "MONGODB_URI": "mongodb+srv://admin:admin@dbcluster-0bgwb.mongodb.net/test?retryWrites=true&w=majority"
     }
   }
