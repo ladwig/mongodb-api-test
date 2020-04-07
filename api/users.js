@@ -37,8 +37,8 @@ module.exports = async (req, res) => {
   const collection = await db.collection('sample_weatherdata.data')
 
   // Select the users collection from the database
-  const data = await collection.find({}).toArray()
+  const id = await collection.find({}).toArray()
 
   // Respond with a JSON string of all users in the collection
-  res.status(200).json({ data })
+  res.status(200).json({ id })
 }
