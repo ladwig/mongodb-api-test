@@ -15,11 +15,11 @@ async function connectToDatabase(uri) {
   }
 
   // If no connection is cached, create a new one
-  const client = await MongoClient.connect(uri, { useNewUrlParser: true })
+  const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 
   // Select the database through the connection,
   // using the database path of the connection string
-  const db = await client.db('sample_weatherdata')
+  const db = await client.db('sample_mflix')
 
   // Cache the database connection and return the connection
   cachedDb = db
@@ -34,7 +34,7 @@ module.exports = async (req, res) => {
   const db = await connectToDatabase(process.env.MONGODB_URI)
 
   // Select the "users" collection from the database
-  const collection = await db.collection('data')
+  const collection = await db.collection('users')
 
   // Select the users collection from the database
   const data = await collection.find({}).toArray()
