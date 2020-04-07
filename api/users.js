@@ -34,11 +34,11 @@ module.exports = async (req, res) => {
   const db = await connectToDatabase(process.env.MONGODB_URI)
 
   // Select the "users" collection from the database
-  const collection = await db.collection('sample_weatherdata')
+  const collection = await db.collection('data')
 
   // Select the users collection from the database
-  const id = await collection.find({}).toArray()
+  const data = await collection.find({}).toArray()
 
   // Respond with a JSON string of all users in the collection
-  res.status(200).json({ id })
+  res.status(200).json({ data })
 }
