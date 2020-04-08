@@ -35,7 +35,6 @@ module.exports = async (req, res) => {
 
   // Select the "users" collection from the database
   const collection = await db.collection('theaters')
-  collection.save({_id:"abc", user:"David"},{w:1}, callback)
 
   // Select the users collection from the database
   const data = await collection.find({}).toArray()
