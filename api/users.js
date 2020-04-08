@@ -38,8 +38,7 @@ module.exports = async (req, res) => {
 
   // Select the users collection from the database
   const data = await collection.find({}).toArray()
-  collection.save({_id:"abc", user:"David"},{w:1}, callback)
-  console.log("test")
+
   // Respond with a JSON string of all users in the collection
   res.status(200).json({ data })
 }
